@@ -1,5 +1,5 @@
 output "rabbitmq_elb_dns" {
-  value = "${aws_elb.elb.dns_name}"
+  value = "${aws_lb.elb.dns_name}"
 }
 
 output "admin_password" {

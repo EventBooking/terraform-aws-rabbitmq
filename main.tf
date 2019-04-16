@@ -178,7 +178,7 @@ resource "aws_autoscaling_group" "rabbitmq" {
   health_check_type         = "ELB"
   force_delete              = true
   launch_configuration      = "${aws_launch_configuration.rabbitmq.name}"
-  load_balancers            = ["${aws_elb.elb.name}"]
+  load_balancers            = ["${aws_lb.elb.name}"]
   vpc_zone_identifier       = ["${var.subnet_ids}"]
 
   tag {
@@ -188,7 +188,7 @@ resource "aws_autoscaling_group" "rabbitmq" {
   }
 }
 
-resource "aws_elb" "elb" {
+resource "aws_lb" "elb" {
   name = "${local.cluster_name}-elb"
 
   listener {
