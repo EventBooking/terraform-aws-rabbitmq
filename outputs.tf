@@ -1,4 +1,4 @@
-output "rabbitmq_elb_dns" {
+output "rabbitmq_lb_dns" {
   value = "${aws_lb.elb.dns_name}"
 }
 
